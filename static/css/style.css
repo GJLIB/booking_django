@@ -1,0 +1,17 @@
+body {
+    background: #99b3ff;
+background: linear-gradient(180deg, rgba(153, 179, 255, 1) 47%, rgba(255, 255, 255, 1) 100%);
+    font-family:'Courier New', Courier, monospace;
+    color: white;
+    min-height: 100vh;
+}
+
+.my-btn {
+    background: #99b3ff;
+    background: linear-gradient(180deg, rgba(153, 179, 255, 1) 47%, rgba(255, 255, 255, 1) 100%);
+}
+.room-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}

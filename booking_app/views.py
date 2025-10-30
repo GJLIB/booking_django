@@ -1,4 +1,9 @@
 from django.shortcuts import render
+from booking_app.models import Room
 
 def home(request):
-    return render(request, 'home.html')
+    rooms = Room.objects.all()
+    context = {
+        'rooms' : rooms
+    }
+    return render(request, 'home.html', context)

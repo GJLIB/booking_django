@@ -1,6 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Ласкаво просимо на сайт</h1>
-    <p>Це головна сторінка веб-додатку</p>
+
+<h1 class = 'bg-primary p-3 mb-5 text-center'>Готель LogikaHotel</h1>
+<div class = 'room-list'>
+
+{% for room in rooms %}
+
+    <div class="card" style="width: 18rem;">
+
+        {% if room.photo %}
+        <img src="{{room.photo.url}}" class="card-img-top">
+
+        {% endif %}
+        
+        <div class="card-body">
+          <h5 class="card-title">{{room.title}}</h5>
+          <p class="card-text">{{room.price}}$/week</p>
+          <p class="card-text">{{room.description}}.</p>
+          <a href="#" class="btn btn-primary my-btn">Детальніше</a>
+        </div>
+      </div>
+
+{% endfor %}
+
 {% endblock %}
