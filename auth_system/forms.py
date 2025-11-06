@@ -14,8 +14,9 @@ class LoginForm(AuthenticationForm):
             field.widget.attrs.update({'class': 'form-control mb-3'})
 
 class RegisterForm(UserCreationForm):
+    date_of_birth = forms.DateField(widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control mb-3'}))
     class Meta:
-        date_of_birth = forms.DateField(widget=forms.DateInput(attrs={'type': 'date', 'class': 'form-control mb-3'}))
+        
         model = User
         fields  = ['first_name', 'last_name', 'username', 'email', 'phone', 'date_of_birth', 'password1', 'password2']
     
@@ -24,5 +25,3 @@ class RegisterForm(UserCreationForm):
 
         for field in self.fields.values():
             field.widget.attrs.update({'class': 'form-control mb-3'})
-
-        self.field['date_of_birth'].widget.attrs.update({'type:' 'date'})
